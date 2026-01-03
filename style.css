@@ -1,25 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap');
 
-
+/* ---------- RESET ---------- */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-     font-family: "Google Sans", sans-serif;
+    font-family: "Google Sans", sans-serif;
 }
 
+/* ---------- THEME VARIABLES ---------- */
 :root {
-  --color-primary: #5C56E1;
-  --color-primary-dark: #5b21b6;
-  --color-accent: #8B5CF6;
-  --color-card: #FFFFFF;
-  --color-input: #F1F1FF;
-  --color-text: #09090E;
-  --color-placeholder: #5C5A87;
-  --color-border: #D4D4ED;
-  --color-gradient: linear-gradient(135deg, #5C56E1, #8B5CF6);
+    --color-primary: #5C56E1;
+    --color-primary-dark: #5b21b6;
+    --color-accent: #8B5CF6;
+    --color-card: #FFFFFF;
+    --color-input: #F1F1FF;
+    --color-text: #09090E;
+    --color-placeholder: #5C5A87;
+    --color-border: #D4D4ED;
+    --color-gradient: linear-gradient(135deg, #5C56E1, #8B5CF6);
 }
 
+/* ---------- BODY ---------- */
 body {
     display: flex;
     align-items: center;
@@ -27,17 +29,18 @@ body {
     min-height: 100vh;
     padding: 15px;
     color: var(--color-text);
-    background: linear-gradient(#E9E9FF, #C8C7FF );
+    background: linear-gradient(#E9E9FF, #C8C7FF);
 }
 
+/* ---------- CONTAINER ---------- */
 .container {
-width: 900px;
-padding: 32px;
-position: relative;
-border-radius: 23px;
-overflow: hidden;
-background: var(--color-card);
-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    width: 900px;
+    padding: 32px;
+    position: relative;
+    border-radius: 23px;
+    overflow: hidden;
+    background: var(--color-card);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 .container::before {
@@ -50,77 +53,76 @@ box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     background: var(--color-gradient);
 }
 
-.header{
+/* ---------- HEADER ---------- */
+.header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-
 }
 
-.header .logo-wrapper{
+.logo-wrapper {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
 }
 
-.header .logo-wrapper .logo{
+.logo {
     width: 56px;
-    height: 55px;
+    height: 56px;
     display: flex;
-    color: #fff;
-    font-size: 1.35rem;
-    flex-shrink: 0;
-    border-radius: 15px;
     align-items: center;
     justify-content: center;
+    border-radius: 15px;
+    font-size: 1.4rem;
+    color: #fff;
     background: var(--color-gradient);
 }
 
-.header .logo-wrapper h1{
+.logo-wrapper h1 {
     font-size: 1.9rem;
     font-weight: 700;
-
 }
 
-.header .theme-toggle{
+/* ---------- THEME TOGGLE ---------- */
+.theme-toggle {
     width: 43px;
     height: 43px;
     border-radius: 50%;
     font-size: 1.05rem;
     cursor: pointer;
-    display: flex ;
+    display: flex;
     align-items: center;
     justify-content: center;
-    flex-shrink: 0;
     color: var(--color-placeholder);
     background: var(--color-input);
-    border:1px solid var(--color-border);
+    border: 1px solid var(--color-border);
     transition: all 0.3s ease;
 }
 
-.header .theme-toggle:hover{
-   color: var(--color-primary);
-   transform: translateY(-2px);
-   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+.theme-toggle:hover {
+    color: var(--color-primary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.main-content{
-    margin-top: 35px 0 5px;   
+/* ---------- MAIN CONTENT ---------- */
+.main-content {
+    margin: 35px 0 5px;
 }
 
-.main-content .prompt-container{
-  width: 100%;
-  position: relative ;
-  margin-bottom: 20px;
+/* ---------- PROMPT ---------- */
+.prompt-container {
+    position: relative;
+    margin-bottom: 20px;
 }
 
-.prompt-container .prompt-input{
+.prompt-input {
     width: 100%;
-    resize: vertical;
-    line-height: 1.6;
-    font-size: 1.05rem;
     min-height: 120px;
     padding: 16px 20px;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    resize: none;
     border-radius: 15px;
     color: var(--color-text);
     background: var(--color-input);
@@ -128,78 +130,118 @@ box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
 }
 
-.prompt-container .prompt-input::placeholder{
+.prompt-input::placeholder {
     color: var(--color-placeholder);
 }
 
-.prompt-container .prompt-input:focus{
+.prompt-input:focus {
     outline: none;
     border-color: var(--color-accent);
     box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.15);
 }
 
-.prompt-container .prompt-btn{
-    position:absolute;
+/* ---------- RANDOM PROMPT BUTTON ---------- */
+.prompt-btn {
+    position: absolute;
     right: 15px;
     bottom: 15px;
-    height: 35px;
     width: 35px;
+    height: 35px;
     border: none;
-    color: #fff;
-    font-size:  0.75rem;
     border-radius: 50%;
-    opacity: 0.8;
-    cursor: pointer;
+    font-size: 0.8rem;
+    color: #fff;
     background: var(--color-gradient);
-    transition: qll 0.3s ease;
-}
-
-.prompt-container .prompt-btn:hover{
-    opacity: 1;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-    transform: translateY(-2px);
     cursor: pointer;
+    opacity: 0.85;
+    transition: all 0.3s ease;
 }
 
-.main-content .prompt-actions{
+.prompt-btn:hover {
+    opacity: 1;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* ---------- ACTIONS GRID ---------- */
+.prompt-actions {
     display: grid;
-    gap:14px;
+    gap: 14px;
     grid-template-columns: 1.2fr 1fr 1.1fr 1fr;
 }
 
-
-.prompt-actions .select-wrapper{
+/* ---------- SELECTS ---------- */
+.select-wrapper {
     position: relative;
 }
 
-
-.prompt-actions .select-wrapper::after{
+.select-wrapper::after {
     content: "\f078";
-    font-family: "Font Awesome 6 Free";
-    font-weight:900;
+    font-family: "Font Awesome 7 Free";
+    font-weight: 900;
     position: absolute;
-    right: 20px;
-    pointer-events: none;
+    right: 18px;
     top: 50%;
-    color:var(--color-placeholder);
-    padding-left: 7px;
-    background: var(--color-input);
     transform: translateY(-50%);
-
+    color: var(--color-placeholder);
+    pointer-events: none;
+    background: var(--color-input);
+    padding-left: 6px;
 }
 
-.prompt-actions :where(.custom-select, .generate-btn){
+.custom-select {
+    width: 100%;
+    height: 100%;
+    padding: 12px 45px 12px 20px;
+    font-size: 1rem;
+    border-radius: 15px;
+    background: var(--color-input);
+    border: 1px solid var(--color-border);
+    appearance: none;
     cursor: pointer;
+}
+
+.custom-select:focus {
+    outline: none;
+    border-color: var(--color-accent);
+}
+
+
+
+/* ---------- GENERATE BUTTON ---------- */
+.generate-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
     padding: 12px 20px;
     font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
     border-radius: 10px;
-   background: var(--color-input);
-   border: 1px solid var(--color-border);
+    border: none;
+    cursor: pointer;
+    background: var(--color-gradient);
+    transition: all 0.3s ease;
 }
 
-.prompt-actions .custom-select{
-    width: 100%;
-    outline: none;
-    height: 100%;
-    appearance: none ;
+.generate-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+        padding: 24px;
+    }
+
+    .prompt-actions {
+        grid-template-columns: 1fr;
+    }
+
+    .logo-wrapper h1 {
+        font-size: 1.4rem;
+    }
 }
