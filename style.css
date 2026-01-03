@@ -227,11 +227,80 @@ body {
     cursor: pointer;
     background: var(--color-gradient);
     transition: all 0.3s ease;
+    margin-left: auto;
 }
 
 .generate-btn:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Image overlay */
+
+.main-content .gallery-grid{
+    display: grid;
+    gap: 15px;
+    margin-top:30px;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+}
+
+
+.gallery-grid .img-card{
+    position: relative;
+    overflow: hidden;
+    aspect-ratio:1;
+    border-radius: 16px;
+    background: var(--color-input);
+    border: 1px solid var(--color-border);
+    transform: all 0.5s ease;
+}
+
+.gallery-grid .img-card:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+}
+
+
+.gallery-grid .img-card .result-img{
+    height:100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.gallery-grid .img-card .img-overlay{
+     position: absolute;
+     bottom: 0;
+     left:0;
+     right:0;
+     padding: 20px;
+     justify-content: flex-end;
+     display: flex;
+     opacity: 0;
+     pointer-events:none;
+     background: linear-gradient(transparent, rgba(0,0,0,0.8));
+     transition: all 0.3s ease;
+}
+
+.gallery-grid .img-card:hover .img-overlay{
+     opacity: 1;
+     pointer-events:auto;
+}
+
+.gallery-grid .img-card .img-overlay .img-download-btn{
+    height: 45px;
+    width: 45px;
+    color:#fff;
+    backdrop-filter: blur(5px);
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    background:rgba(255, 255, 255, 0.25);
+    transition: all 0.3s ease;
+}
+
+.gallery-grid .img-card .img-overlay .img-download-btn:hover{
+    transform: scale(1.05);
+    background:rgba(255, 255, 255, 0.4);
 }
 
 /* ---------- RESPONSIVE ---------- */
